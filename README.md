@@ -1,1 +1,3 @@
 # atminasspele
+
+Baiba te bija!
