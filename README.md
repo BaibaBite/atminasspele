@@ -7,3 +7,4 @@ Biju te arī no web versijas.
 - kā lietot GitHub
 - kā lietot GitHub Desktop
 - kā lietot VS Code ar GitHub
+- veicu kaut kādas izmaiņas ReadMe failā
