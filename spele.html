@@ -44,6 +44,7 @@
             </div><!--spēles laukuma beigas-->
         </div><!--lapas satura beigas-->
     </div><!--Beidzas ķermeņa bloks-->
+
     <script>
         let laukumuSaturs=['😍','🤖','😎','🤖','😎','😍']
         let atvertieLaukumi=[]
@@ -62,33 +63,34 @@
                 atvertsJaunsLaukums=false
             }
 
-            console.log(laukums)
-            console.log(atvertsJaunsLaukums)
+            // console.log(laukums)
+            // console.log(atvertsJaunsLaukums)
 
             if (atvertsJaunsLaukums){
             // izsauc atlasīto lauku (pievieno # un div pie nosaukuma).izsauc css failu un nomaina stilu no .bock div uz block
-            document.querySelector('#'+laukums+' div').style.display="block"
-            pedejieDivi.push(laukums)
+                document.querySelector('#'+laukums+' div').style.display="block"
+                document.querySelector('#'+laukums+' div').style.opacity=1
+                pedejieDivi.push(laukums)
             }
 
             
             if( pedejieDivi.length == 2 )
             {
-            let atverts1 = pedejieDivi[0].replace('L','')
-            let atverts2 = pedejieDivi[1].replace('L','')
+                let atverts1 = pedejieDivi[0].replace('L','')
+                let atverts2 = pedejieDivi[1].replace('L','')
 
-            atverts1=parseInt(atverts1,10);
-            atverts2=parseInt(atverts2,10);
+                atverts1=parseInt(atverts1,10);
+                atverts2=parseInt(atverts2,10);
 
-            if( laukumuSaturs[atverts1] == laukumuSaturs.indexOf(atverts2) )
-            {
-                console.log('atvērti vienādi')
-                atvertieLaukumi.push(pedejieDivi[0],pedejieDivi[1])
-            }
-            else{
+                if( laukumuSaturs[atverts1] == laukumuSaturs.indexOf(atverts2) )
+                {
+                    console.log('atvērti vienādi')
+                    atvertieLaukumi.push(pedejieDivi[0],pedejieDivi[1])
+                }
+                else{
                 console.log('Nav atvērti vienādi')
                 document.querySelector('#'+pedejieDivi[0]+'div').style.display='none'
-            }
+                }
             
             pedejieDivi=[]
 
