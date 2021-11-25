@@ -44,5 +44,39 @@
             </div><!--spēles laukuma beigas-->
         </div><!--lapas satura beigas-->
     </div><!--Beidzas ķermeņa bloks-->
+    <script>
+        let laukumuSaturs=['😍','🤖','😎','🤖','😎','😍']
+        let atvertieLaukumi=[]
+        let pedejietDivi=[]
+
+
+        function veiktGajienu(laukums)
+        {
+            let atvertsJaunsLaukums=false;
+
+            if (atvertieLaukumi.indexOf(laukums)==-1)
+            {
+                atvertsJaunsLaukums=true
+            }
+            else{
+                atvertsJaunsLaukums=false
+            }
+
+            console.log(laukums)
+            console.log(atvertsJaunsLaukums)
+
+            if (atvertsJaunsLaukums){
+            // izsauc atlasīto lauku (pievieno # un div pie nosaukuma).izsauc css failu un nomaina stilu no .bock div uz block
+            document.querySelector('#'+laukums+' div').style.display="block"
+            pedejietDivi.push(laukums)
+        }
+
+            atvertieLaukumi.push(laukums)
+
+            if(laukumuSaturs.length==atvertieLaukumi.length){
+                alert('Apsveicam! Spēle pabeigta.')
+            }
+        }//beidzas veiktGajienu f-cija
+    </script>
 </body>
 </html>
