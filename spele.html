@@ -47,7 +47,7 @@
     <script>
         let laukumuSaturs=['😍','🤖','😎','🤖','😎','😍']
         let atvertieLaukumi=[]
-        let pedejietDivi=[]
+        let pedejieDivi=[]
 
 
         function veiktGajienu(laukums)
@@ -68,10 +68,31 @@
             if (atvertsJaunsLaukums){
             // izsauc atlasīto lauku (pievieno # un div pie nosaukuma).izsauc css failu un nomaina stilu no .bock div uz block
             document.querySelector('#'+laukums+' div').style.display="block"
-            pedejietDivi.push(laukums)
-        }
+            pedejieDivi.push(laukums)
+            }
 
-            atvertieLaukumi.push(laukums)
+            
+            if( pedejieDivi.length == 2 )
+            {
+            let atverts1 = pedejieDivi[0].replace('L','')
+            let atverts2 = pedejieDivi[1].replace('L','')
+
+            atverts1=parseInt(atverts1,10);
+            atverts2=parseInt(atverts2,10);
+
+            if( laukumuSaturs[atverts1] == laukumuSaturs.indexOf(atverts2) )
+            {
+                console.log('atvērti vienādi')
+                atvertieLaukumi.push(pedejieDivi[0],pedejieDivi[1])
+            }
+            else{
+                console.log('Nav atvērti vienādi')
+                document.querySelector('#'+pedejieDivi[0]+'div').style.display='none'
+            }
+            
+            pedejieDivi=[]
+
+            }
 
             if(laukumuSaturs.length==atvertieLaukumi.length){
                 alert('Apsveicam! Spēle pabeigta.')
