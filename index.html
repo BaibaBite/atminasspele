@@ -21,48 +21,88 @@
             </ul>
         </div><!--Beidzas mājas lapas galvene-->
         <div class="content">
-            <p>Noteikumu teksts</p>
+            <h3 class="virsraksts">Noteikumu teksts</h3>
+
+            Vārds:<input id="vards"/>
+            <br/>
+            Vecums:<input id="vecums"/>
+            <br/>
+            Reģions:
+            <select id="regions">
+                <option value="Vidzeme">Vidzeme</option>  
+                <option value="Latgale">Latgale</option>
+                <option value="Zemgale">Zemgale</option> 
+                <option value="Kurzeme">Kurzeme</option>  
+                <option value="Sēlija">Sēlija</option>   
+            </select>
+            <!-- camelcase pieraksta veids ar lielajiem burtiem pa vidu -->
+            <button onclick="saktSpeli()">Sākt spēli!</button>
         </div><!--lapas satura beigas-->
     </div><!--Beidzas ķermeņa bloks-->
     <script>
-        let vards;
-        const valsts="Latvija";
-        vards="Laura";
-        let punkti = 100
-        let vards2="Pēteris ir labais"
-        10+20
-        "10"+"20"
-        let klase=['Jānis','Laura','Jana']
-        klase
-        klase[0]
-        klase[3]='Uģis'
+        function saktSpeli()
+            {
+                let vards=document.querySelector('#vards').value
+                
+                let vecums=document.querySelector('#vecums').value
+                let regions=document.querySelector('#regions').value
+                
+                console.log(vards)//izvada vērtību konsolē
+                console.log(vecums)//izvada vērtību konsolē
+                console.log(regions)//izvada vērtību konsolē
+            
+                if(vards=='')
+                {
+                   alert('Ievadi vārdu!') 
+                }
+                //pārsūta uz spēles failu #- norāda faila nosaukuma beigas
+                else{
+                    window.location="spele.html#"+vards+','+vecums+','+regions
+                }
+            }//beidzas saktSpeli f-cija
+       
+        // let vards;
+        // const valsts="Latvija";
+        // vards="Laura";
+        // let punkti = 100
+        // let vards2="Pēteris ir labais"
+        // 10+20
+        // "10"+"20"
+        // let klase=['Jānis','Laura','Jana']
+        // klase
+        // klase[0]
+        // klase[3]='Uģis'
 
-        let skolens={
-            vards:"Jānis",
-            vecums:16,
-            'patīk datori':"Jā"
-        }
-        skolens
-        skolens["patīk datori"]
+        // let skolens={
+        //     vards:"Jānis",
+        //     vecums:16,
+        //     'patīk datori':"Jā"
+        // }
+        // skolens
+        // skolens["patīk datori"]
 
-        let json=[
-            {
-                vards:'Jānis',
-                vecums: 16
-            },
-            {
-                vards:'Līga',
-                vecums: 15
-            },
-            {
-                vards:'Dace',
-                vecums: 17
-            },
-            {
-                vards:'Otto',
-                vecums: 17
-            }
-        ]
+        // let json=[
+        //     {
+        //         vards:'Jānis',
+        //         vecums: 16
+        //     },
+        //     {
+        //         vards:'Līga',
+        //         vecums: 15
+        //     },
+        //     {
+        //         vards:'Dace',
+        //         vecums: 17
+        //     },
+        //     {
+        //         vards:'Otto',
+        //         vecums: 17
+        //     }
+        // ]
+        // console.log(vards)
+        //     //tekstu h3 virsrakstu ar klasi .virsraksts aizstāj ar citu tekstu.
+        // document.querySelector('.virsraksts').innerHTML='Hakuma matata, '+vards+'!'
+
     </script>
 </body>
 </html>
